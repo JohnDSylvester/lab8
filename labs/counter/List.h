@@ -27,7 +27,7 @@ class List{
 		Node* getHead() const;	
 		void clear();
 		void insert(const std::string& key, const int & value);
-		void remove(const std::string& key);
+		bool remove(const std::string& key);
 		Node* find(const std::string& key) const;
 };
 

@@ -44,7 +44,9 @@
   	}
 
   void Counter::del(const std::string& key){
-  	inOrder.remove(key);
+  	if(inOrder.remove(key)){
+		cou--;
+	}
   }
   int  Counter::get(const std::string& key) const{
   	Node* temp = inOrder.find(key);

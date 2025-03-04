@@ -46,7 +46,7 @@
 		}
 	}
 
-	void List::remove(const std::string& key){
+	bool List::remove(const std::string& key){
 		Node* tracer = head;
                 while(tracer != nullptr){
 			if(tracer->key == key){
@@ -69,10 +69,11 @@
 					tail->next = nullptr;
 				}
 				delete tracer;
-				return;
+				return 1;
 			}
 			tracer = tracer->next;
 	}
+		return 0;
 	}
 
 	Node* List::find(const std::string& key) const{
