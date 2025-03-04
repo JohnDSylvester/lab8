@@ -3,7 +3,8 @@
 
 #include <cstddef>
 #include <string>
-
+#include "List.h"
+#include "List.cpp"
 // This is the Counter class you need to implement.
 // It includes the Counter::Iterator as a nested class.
 
@@ -11,8 +12,13 @@ class Counter {
 public:
   class Iterator {
     // Member Variables
+	Node* current;
+	std::string k;
+	int v;
+
 
   public:
+	Iterator(Node* c);
     const std::string& key() const;
     int value() const;
 
@@ -23,7 +29,8 @@ public:
 
 private:
   // Member Variables
-
+	List inOrder;
+	size_t cou;
 private:
   // Helper Functions
 
