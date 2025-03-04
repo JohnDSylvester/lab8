@@ -1,5 +1,6 @@
+#include "Counter.h"
 // Counter Member Functions
-//
+
 
 	Counter::Counter(){
 		cou = 0;
