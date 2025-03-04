@@ -1,5 +1,3 @@
-#include "Counter.h"
-
 // Counter::Iterator Member Functions
 	Counter::Iterator::Iterator(Node* c){
 		current = c;

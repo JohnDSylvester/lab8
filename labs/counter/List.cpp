@@ -1,5 +1,3 @@
-#include "List.h"
-
 // List Member Functions
 	List::List(){
 		head = nullptr;
