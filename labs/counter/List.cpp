@@ -13,21 +13,20 @@
 			temp = tracer;
 			tracer = tracer->next;
 			delete temp; 
-	}
-}	
+		}
+	}	
 
 	void List::clear(){
-
                 Node* tracer = head;
                 Node* temp;
                 while(tracer != nullptr){
                         temp = tracer;
                         tracer = tracer->next;
                         delete temp;
-        }
+        	}
 		head = nullptr;
 		tail = nullptr;
-}
+		}
 	void List::insert(const std::string& key, const int & value){
 		if(head == nullptr){
 			head = new Node;
