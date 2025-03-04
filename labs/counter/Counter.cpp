@@ -1,4 +1,3 @@
-#include "Counter.h"
 #include "Iterator.cpp"
 
 // Counter Member Functions
