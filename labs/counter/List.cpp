@@ -27,7 +27,7 @@
 		head = nullptr;
 		tail = nullptr;
 		}
-	void List::insert(const std::string& key, const int & value){
+	Node* List::insert(const std::string& key, const int & value){
 		if(head == nullptr){
 			head = new Node;
 			head->prev = nullptr;
@@ -44,50 +44,39 @@
 			tail->next = temp;
 			tail = temp;
 		}
+		return tail;
 	}
 
-	bool List::remove(const std::string& key){
-		Node* tracer = head;
-                while(tracer != nullptr){
-			if(tracer->key == key){
-				if(tracer != head && tracer != tail){
-				Node* last = tracer->prev;
-				Node* ahead = tracer->next;
-				last->next = tracer->next;
-				ahead->prev = tracer->prev;
-				}
-				else if(tracer == head && tracer == tail){
-					head = nullptr;
-					tail = nullptr;
-				}
-				else if(tracer == head){
-					head = tracer->next;
-					head->prev = nullptr;
-				}
-				else{
-					tail = tracer->prev;
-					tail->next = nullptr;
-				}
-				delete tracer;
-				return 1;
-			}
-			tracer = tracer->next;
-	}
-		return 0;
-	}
-
-	Node* List::find(const std::string& key) const{
-		Node* tracer = head;
-		while(tracer != nullptr){
-			if(tracer->key == key){
-				return tracer; 
-			}
-			tracer = tracer->next;
+	void List::remove(Node* toRemove){
+		if(toRemove == nullptr){
+			return;
 		}
 
-		return nullptr;
+		Node* tracer = toRemove;
+		if(tracer != head && tracer != tail){
+			Node* last = tracer->prev;
+			Node* ahead = tracer->next;
+			last->next = tracer->next;
+			ahead->prev = tracer->prev;
+			}
+		else if(tracer == head && tracer == tail){
+			head = nullptr;
+			tail = nullptr;
+		}
+		else if(tracer == head){
+			head = tracer->next;
+			head->prev = nullptr;
+		}
+		else{
+			tail = tracer->prev;
+			tail->next = nullptr;
+		}
+			delete tracer;
 	}
 
 	Node* List::getHead() const{
 		return head;
+	}
+	Node* List::getTail() const{
+		return tail;
 	}

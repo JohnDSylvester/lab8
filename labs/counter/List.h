@@ -25,10 +25,10 @@ class List{
 		~List();
 	
 		Node* getHead() const;	
+		Node* getTail() const;
 		void clear();
-		void insert(const std::string& key, const int & value);
-		bool remove(const std::string& key);
-		Node* find(const std::string& key) const;
+		Node* insert(const std::string& key, const int & value);
+		void remove(Node* toRemove);
 };
 
 #endif
