@@ -57,8 +57,8 @@
   void Counter::del(const std::string& key){
 	int found = hashTable.lookup(key);
         if(found != -1){
-		hashTable.del(found);
-		inOrder.remove(hashTable.getNode(found));	
+		inOrder.remove(hashTable.getNode(found));
+		hashTable.del(found);	
 		cou--;
 	}
   }
